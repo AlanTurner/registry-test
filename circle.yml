@@ -9,18 +9,16 @@ machine:
     version: openjdk8
 
   python:
-    version: pypy-2.7.12
+    version: pypy-2.2.1
 
 # Add some environment variables
 #environment:
 
 ## Customize dependencies
-#dependencies:
-#  pre:
-#    - ./test.py
-#    - npm install coffeescript # install from a different package manager
-#    - gem uninstall bundler # use a custom version of bundler
-#    - gem install bundler --pre
+dependencies:
+  pre:
+    - pyenv install --list
+    - ./test.py
 
 #  override:
 #    - bundle install: # note ':' here
