@@ -1,0 +1,49 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Europe/London # Set the timezone
+
+  # Version of ruby to use
+   java:
+      version: openjdk8
+
+   python:
+      version: pypy-2.7.12
+  # Add some environment variables
+  environment:
+
+
+## Customize dependencies
+dependencies:
+  pre:
+    - ./test.py
+#    - npm install coffeescript # install from a different package manager
+#    - gem uninstall bundler # use a custom version of bundler
+#    - gem install bundler --pre
+
+  override:
+    - bundle install: # note ':' here
+        timeout: 180 # fail if command has no output for 3 minutes
+        # IMPORTANT NOTE: ^^ the timeout modifier above must be
+        # double indented (four spaces) from the previous line
+
+## Customize test commands
+test:
+  post:
+     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
+
+## Customize deployment commands
+#deployment:
+#  staging:
+#    branch: master
+#    heroku:
+#      appname: foo-bar-123
+
+## Custom notifications
+#notify:
+#  webhooks:
+#    # A list of hashes representing hooks. Only the url field is supported.
+#    - url: https://someurl.com/hooks/circle
