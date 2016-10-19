@@ -12,27 +12,27 @@ machine:
     version: pypy-2.7.12
 
 # Add some environment variables
-environment:
+#environment:
 
 ## Customize dependencies
-dependencies:
-  pre:
-    - ./test.py
+#dependencies:
+#  pre:
+#    - ./test.py
 #    - npm install coffeescript # install from a different package manager
 #    - gem uninstall bundler # use a custom version of bundler
 #    - gem install bundler --pre
 
-  override:
-    - bundle install: # note ':' here
-          timeout: 180 # fail if command has no output for 3 minutes
+#  override:
+#    - bundle install: # note ':' here
+#          timeout: 180 # fail if command has no output for 3 minutes
         # IMPORTANT NOTE: ^^ the timeout modifier above must be
         # double indented (four spaces) from the previous line
 
 ## Customize test commands
-test:
-  post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+#test:
+#  post:
+#    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+#    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 
 ## Customize deployment commands
