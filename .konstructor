@@ -1,10 +1,10 @@
 {
-  "Name": "Konstructor Version API",
+  "name": "Konstructor Version API",
   "description": "An API to provide easy, stateful semantic versioning.",
   "systemCode":"konversionapi",
   "version" : "tag",
   "type": "api",
-  "locationUrl": "https://github.com/Financial-Times/lambda-version-api"
+  "locationUrl": "https://github.com/Financial-Times/lambda-version-api",
   "status": "active",
   "serviceUrl": "https://konstructor.in.ft.com/swagger.html?url=../versionapi.json"
 }
