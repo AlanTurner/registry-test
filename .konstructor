@@ -1,5 +1,5 @@
 {
-  "name": "Konstructor Version API",
+  "name": "Konstructor test API",
   "description": "An API to provide easy, stateful semantic versioning.",
   "systemCode":"konversionapi",
   "version" : "tag",
