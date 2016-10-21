@@ -38,7 +38,7 @@ test:
 #      appname: foo-bar-123
 
 ## Custom notifications
-#notify:
-#  webhooks:
-#    # A list of hashes representing hooks. Only the url field is supported.
-#    - url: https://someurl.com/hooks/circle
+notify:
+  webhooks:
+    # A list of hook hashes, containing the URL field
+    - url: https://cr-api-t.in.ft.com/v2/circleci
