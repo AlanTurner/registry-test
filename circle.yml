@@ -11,10 +11,14 @@ machine:
 # Add some environment variables
 #environment:
 
+checkout:
+  post:
+    -  sed -i 's/{RELEASE_LOG_KEY}/${RELEASE_LOG_KEY}/g' circle.yml
+
 ## Customize dependencies
-dependencies:
-  pre:
-    - pip install awscli
+#dependencies:
+#  pre:
+#    - pip install awscli
 #    - ./test.py
 
 #  override:
@@ -41,4 +45,4 @@ test:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://cr-api-t.in.ft.com/v2/circleci?key=${RELEASE_LOG_KEY}
+    - url: https://cr-api-t.in.ft.com/v2/circleci?key={RELEASE_LOG_KEY}
