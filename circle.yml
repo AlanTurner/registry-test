@@ -18,6 +18,7 @@ checkout:
 ## Customize dependencies
 dependencies:
   pre:
+     - sudo apt-get install jq
      - wget -qO- https://github.com/AlanTurner/konstructor-register/archive/0.0.1.tar.gz | tar xvz --strip-components 1
      - ./register_key.py
 #    - pip install awscli
@@ -47,4 +48,4 @@ test:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://cr-api-t.in.ft.com/v2/circleci?key=RL_KEY
+    - url: https://cr-api-t.in.ft.com/v2/circleci?key=$RELEASE_LOG_KEY
