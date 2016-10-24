@@ -13,7 +13,7 @@ machine:
 
 checkout:
   post:
-    -  sed  "s/[RELEASE_LOG_KEY]/$RELEASE_LOG_KEY/g" circle.yml
+    -  sed -i "s/RL_KEY/$RELEASE_LOG_KEY/g" test.yml
 
 ## Customize dependencies
 #dependencies:
@@ -45,4 +45,4 @@ test:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://cr-api-t.in.ft.com/v2/circleci?key=[RELEASE_LOG_KEY]
+    - url: https://cr-api-t.in.ft.com/v2/circleci?key=RL_KEY
