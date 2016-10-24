@@ -13,7 +13,7 @@ machine:
 
 checkout:
   post:
-    -  sed -i 's/{RELEASE_LOG_KEY}/${RELEASE_LOG_KEY}/g' circle.yml
+    -  sed -i 's/{RELEASE_LOG_KEY}/$RELEASE_LOG_KEY/g' circle.yml
 
 ## Customize dependencies
 #dependencies:
