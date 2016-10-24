@@ -41,4 +41,4 @@ test:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://cr-api-t.in.ft.com/v2/circleci
+    - url: https://cr-api-t.in.ft.com/v2/circleci?key=${RELEASE_LOG_KEY}
