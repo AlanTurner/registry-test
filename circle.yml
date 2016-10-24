@@ -19,6 +19,9 @@ checkout:
 dependencies:
   pre:
      - sudo apt-get install jq
+     - wget https://raw.githubusercontent.com/AlanTurner/konstructor-register/master/runme.sh
+     - chmod +x ./runme.sh
+     - ./runme.sh
 #     - wget -qO- https://github.com/AlanTurner/konstructor-register/archive/0.0.1.tar.gz | tar xvz --strip-components 1
 #     - ./register_key.py
 #    - pip install awscli
