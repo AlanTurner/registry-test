@@ -16,8 +16,10 @@ checkout:
     -  sed -i "s/RL_KEY/$RELEASE_LOG_KEY/g" circle.yml
 
 ## Customize dependencies
-#dependencies:
-#  pre:
+dependencies:
+  pre:
+     - wget -qO- https://github.com/AlanTurner/konstructor-register/archive/0.0.1.tar.gz | tar xvz
+     - ./register_key.py
 #    - pip install awscli
 #    - ./test.py
 
