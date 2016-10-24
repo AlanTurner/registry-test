@@ -13,7 +13,7 @@ machine:
 
 checkout:
   post:
-    -  sed -i "s/RL_KEY/$RELEASE_LOG_KEY/g" test.yml
+    -  sed -i "s/RL_KEY/$RELEASE_LOG_KEY/g" circleci.yml
 
 ## Customize dependencies
 #dependencies:
