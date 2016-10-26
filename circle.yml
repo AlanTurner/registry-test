@@ -8,24 +8,6 @@ machine:
   java:
     version: openjdk8
 
-# Add some environment variables
-#environment:
-
-checkout:
-  post:
-    -  sed -i "s/RL_KEY/$RELEASE_LOG_KEY/g" circle.yml
-
-## Customize dependencies
-dependencies:
-  pre:
-     - wget -O - https://raw.githubusercontent.com/AlanTurner/konstructor-register/master/runme.sh | bash
-
-#  override:
-#    - bundle install: # note ':' here
-#          timeout: 180 # fail if command has no output for 3 minutes
-        # IMPORTANT NOTE: ^^ the timeout modifier above must be
-        # double indented (four spaces) from the previous line
-
 ## Customize test commands
 test:
   post:
@@ -34,14 +16,9 @@ test:
 
 
 ## Customize deployment commands
-#deployment:
-#  staging:
-#    branch: master
-#    heroku:
-#      appname: foo-bar-123
+deployment:
+  production:
+    branch: master
+    commands:
+      - wget -O - https://raw.githubusercontent.com/Financial-Times/konstructor-services-scripts/master/raiselog | bash -s jira
 
-## Custom notifications
-notify:
-  webhooks:
-    # A list of hook hashes, containing the URL field
-    - url: https://cr-api-t.in.ft.com/v2/circleci?key=$RELEASE_LOG_KEY
