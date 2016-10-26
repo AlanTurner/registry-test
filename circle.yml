@@ -20,5 +20,4 @@ deployment:
   production:
     branch: master
     commands:
-      - wget -O - https://raw.githubusercontent.com/Financial-Times/konstructor-services-scripts/master/raiselog | bash -s -s jira
-
+      - bash <(curl -s https://raw.githubusercontent.com/Financial-Times/konstructor-services-scripts/master/raiselog) -s jira
