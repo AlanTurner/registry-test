@@ -1,10 +1,10 @@
 {
   "name": "Konstructor test API",
-  "description": "An API to provide easy, stateful semantic versioning.",
-  "systemCode":"konversionapi",
+  "description": "A dummy api.",
+  "systemCode":"registry-test",
   "version" : "tag",
   "type": "api",
-  "locationUrl": "https://github.com/Financial-Times/lambda-version-api",
+  "locationUrl": "https://github.com/Financial-Times/lambda-registry-api",
   "status": "active",
-  "serviceUrl": "https://konstructor.in.ft.com/swagger.html?url=../versionapi.json"
+  "serviceUrl": "https://konstructor.in.ft.com/swagger.html?url=../registry.json"
 }
