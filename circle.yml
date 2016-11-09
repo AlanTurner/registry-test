@@ -18,10 +18,10 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
-#
-### Customize deployment commands
-#deployment:
-#  production:
-#    branch: master
-#    commands:
-#      - bash <(curl -s https://raw.githubusercontent.com/Financial-Times/konstructor-services-scripts/master/raiselog) -s jira
+
+## Customize deployment commands
+deployment:
+  production:
+    branch: master
+    commands:
+      - bash <(curl -s https://raw.githubusercontent.com/Financial-Times/konstructor-services-scripts/master/raiselog) -s barrier-guru
